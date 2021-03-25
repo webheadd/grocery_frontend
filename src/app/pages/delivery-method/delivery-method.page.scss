@@ -1,0 +1,40 @@
+ion-content {
+    --background: var(--bg-color-white);
+    .closeModal {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.3rem;
+    }
+    p {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    ion-list {
+        padding: 0 10px;
+
+        .ic_delivery_method {
+            width: 30px;
+            height: 30px;
+            margin-right: 20px;
+        }
+    }
+
+    .note {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 0.8rem;
+        ion-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: var(--color-secondary);
+        }
+    }
+}

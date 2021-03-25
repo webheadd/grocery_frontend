@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="wrapper">
+    <div class="container">
+      <img src="../../../assets/imgs/undraw_sign_in.svg" alt="" />
+      <form
+        id="login_form"
+        [formGroup]="loginForm"
+        (ngSubmit)="login(loginForm.value.mobileNumber, loginForm.value.password)"
+      >
+        <label>Mobile Number</label>
+        <div class="input_container mobile">
+          <span>+63</span>
+          <input
+            type="number"
+            placeholder="9XX XXX XXXX"
+            formControlName="mobileNumber"
+          />
+        </div>
+        <label>Password</label>
+        <div class="input_container">
+          <input type="password" formControlName="password" />
+        </div>
+        <input id="submit_btn" type="submit" value="Login" />
+      </form>
+      <p>
+        Don't have an account?
+        <span (click)="toRegister()">Sign up here</span>.
+      </p>
+    </div>
+  </div>
+</ion-content>

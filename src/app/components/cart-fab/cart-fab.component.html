@@ -1,0 +1,8 @@
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button size="small" (click)="openCart()">
+    <ion-icon color="light" name="cart" *ngIf="badge.value === 0"></ion-icon>
+    <p class="cartBadge" *ngIf="badge.value !== 0">
+      {{ badge.value }}
+    </p>
+  </ion-fab-button>
+</ion-fab>

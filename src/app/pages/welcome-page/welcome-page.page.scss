@@ -1,0 +1,50 @@
+ion-content {
+    .wrapper {
+        height: 100vh;
+    }
+    .container {
+        text-align: center;
+
+        img {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .action_btns {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // border: 1px solid black;
+            width: 80%;
+            margin: 2em auto;
+            max-width: 200px;
+            button {
+                text-align: center;
+                border: none;
+                width: 90px;
+                padding: 10px 0;
+                border-radius: 20px;
+
+                &:first-child {
+                    background: none;
+                    border: 1px solid var(--color-primary);
+                    color: var(--color-primary);
+                }
+                &:last-child {
+                    color: var(--text-white);
+                    background: var(--color-secondary);
+                    border: 1px solid var(--color-secondary);
+                }
+            }
+        }
+    }
+}

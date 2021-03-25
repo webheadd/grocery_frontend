@@ -1,0 +1,46 @@
+<app-cart-fab *ngIf="cartBadge" [badge]="cartBadge"></app-cart-fab>
+
+<ion-content>
+  <div class="banner">
+    <div class="__content">
+      <h2>Good {{ timeOfDay }}, {{ currentUser?.fname }}</h2>
+      <p>Welcome to iShop!</p>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="container">
+      <!-- FEATURED ITEMS SECTION -->
+      <div class="slider featured_items">
+        <h3>Featured</h3>
+        <ion-slides pager="false" [options]="slideOptions">
+          <ion-slide *ngFor="let product of featuredProducts">
+            <app-product
+              (addToCartHandler)="addToCart($event)"
+              [product]="product"
+            ></app-product>
+          </ion-slide>
+          <ion-slide (click)="openProductsPage('featured')" class="see_all">
+            See All
+          </ion-slide>
+        </ion-slides>
+      </div>
+      <!-- END OF FEATURED -->
+      <!-- NEW ITEMS SECTION -->
+      <div class="slider new_items">
+        <h3>New</h3>
+        <ion-slides pager="false" [options]="slideOptions">
+          <ion-slide *ngFor="let product of newProducts">
+            <app-product
+              (addToCartHandler)="addToCart($event)"
+              [product]="product"
+            ></app-product>
+          </ion-slide>
+          <ion-slide (click)="openProductsPage('new')" class="see_all">
+            See All
+          </ion-slide>
+        </ion-slides>
+      </div>
+      <!-- END OF NEW -->
+    </div>
+  </div>
+</ion-content>

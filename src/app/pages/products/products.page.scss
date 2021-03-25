@@ -1,0 +1,72 @@
+.back-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    color: var(--text-white);
+    font-size: 1.2rem;
+    border-radius: 50%;
+    padding: 8px;
+    transition: 0.3s ease-in-out;
+}
+.navbar-inverse {
+    background: var(--color-primary);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sort_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-size: 0.8rem;
+    margin: 10px 0;
+
+    p {
+        margin: 0;
+    }
+
+    .sort {
+        display: flex;
+        align-items: center;
+        ion-icon {
+            margin-left: 10px;
+            font-size: 1.5rem;
+        }
+    }
+
+}
+
+.noProducts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ccc;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    ion-icon {
+        font-size: 5rem;
+    }
+
+}
+
+
+.products_container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    padding-bottom: 50px;
+    .card__container {
+        flex: 0 1 50%;
+        padding: 5px;
+    }
+}

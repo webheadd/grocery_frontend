@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-icon class="closeModal" (click)="dismissModal()" name="close"></ion-icon>
+
+  <div class="wrapper">
+    <div class="__content">
+      <img src="{{ product.img || rootImg }}" />
+      <p>{{ product.name }}</p>
+      <p>₱ {{ product.price }} / {{ product.sell_type }}</p>
+    </div>
+    <div class="form_container">
+      <form #formCon (ngSubmit)="addCart($event, product)">
+        <div class="quantity_container">
+          <ion-icon name="remove" (click)="minusQuantity(product)"></ion-icon>
+          <input type="number" name="quantity" [(ngModel)]="product.qty" />
+          <ion-icon name="add" (click)="addQuantity(product)"></ion-icon>
+        </div>
+        <button class="add_btn">
+          Add to Cart
+        </button>
+      </form>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,92 @@
+ion-content {
+    --background: var(--bg-color-white);
+    .container {
+        form {
+            width: 80%;
+            margin: 0 auto;
+            ion-slides {
+                height: 80vh;
+                ion-slide {
+                    .holder {
+                        .hero_icon {
+                            max-width: 150px;
+                            margin-bottom: 30px;
+                        }
+                        width: 90%;
+                        .form-item {
+                            margin: 0 auto 20px auto;
+                            font-size: 1rem;
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            overflow: hidden;
+                            .label {
+                                display: block;
+                                margin: 10px 0;
+                                width: 100%;
+                                text-align: left;
+
+                            }
+                            input {
+                                width: 100%;
+                                padding: 8px 15px;
+                                border: none;
+                                background: var(--color-med-gray);
+                                color: var(--color-primary);
+                                position: relative;
+                                outline: none;
+                                border-radius: 5px;
+                                transition: 0.3s background ease;
+    
+                                &:focus {
+                                    color: var(--text-white);
+                                    background: var(--color-primary);
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+
+        }
+
+        .sliderController {
+            width: 85%;
+            margin: 0 auto 20px auto;
+            position: relative;
+    
+            .slideControls {
+                padding: 10px 0;
+                background: none;
+                // color: var(--text-primary);
+                display: flex;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                font-size: 1.1rem;
+                &:focus {
+                    outline: none;
+                }
+                ion-icon {
+                    // margin: 0 5px;
+                    font-size: 1.5rem;
+                }
+            }
+            .prev {
+                left: 0;
+            }
+            .next {
+                right: 0;
+            }
+            .submit {
+                // background: var(--color-primary);
+                // color: var(--text-white);
+                right: 0;
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="container">
+    <div class="avatar">
+      <img
+        src="https://mbeduconsult.com/wp-content/uploads/2020/05/Male-Placeholder.png"
+      />
+      <p>
+        {{ profile.fname + " " + profile.lname }}
+        <br />
+        <span>Created: ({{ profile.dateCreated | date: "MMMM d, y" }})</span>
+      </p>
+    </div>
+    <div class="details">
+      <ion-icon name="call"></ion-icon>
+      <p>(+63) {{ profile.mobile }}</p>
+    </div>
+    <div class="details">
+      <ion-icon name="mail"></ion-icon>
+      <p>email@example.com</p>
+    </div>
+    <div class="details">
+      <ion-icon name="location"></ion-icon>
+      <p>{{ profile.address }}</p>
+    </div>
+    <div class="buttons">
+      <button class="button" (click)="logout()">Edit Profile</button>
+      <button class="button" (click)="logout()">Change Password</button>
+      <button class="button" (click)="logout()">Sign out</button>
+    </div>
+  </div>
+</ion-content>

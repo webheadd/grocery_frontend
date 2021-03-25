@@ -1,0 +1,211 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+//colors
+:root {
+    --color-primary: rgb(63, 61, 86);
+    --color-primary-rgb: 63, 61, 86;
+
+    --color-secondary: rgb(108, 99, 255);
+    --color-secondary-rgb: 108, 99, 255;
+
+    --color-tertiary: rgb(87, 183, 147);
+    --color-tertiary-rgb: 87, 183, 147;
+
+    --color-lprimary: rgb(96, 93, 130);
+    --color-lprimary-rgb: 96, 93, 130;
+
+    --bg-color-white: rgb(255, 255, 255);
+    --bg-color-white-rgb: 255, 255, 255;
+
+    --color-light-gray: rgb(250, 250, 250);
+    --color-light-gray-rgb: 250, 250, 250;
+
+    --color-med-gray: rgb(240, 240, 240);
+    --color-med-gray-rgb: 240, 240, 240;
+
+}
+
+
+//font colors
+
+:root {
+    //shadows
+    --light-gray-shadow: #dfdfdf;
+
+    --text-white: #fff;
+    --text-gray: rgb(209, 209, 209);
+}
+* {
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+p {
+    line-height: 1.3rem;
+}
+ion-content {
+    --color: var(--color-primary);
+    --background: var(--color-light-gray);
+    position: relative;
+}
+// remove shadow for ion header
+ion-header {
+    &::after {
+        width: 0 !important;
+    }
+    border-bottom: 1px solid var(--text-gray);
+}
+
+//remove padding in grid and column
+ion-grid {
+    padding: 0;
+    ion-row {
+        margin: 15px 0;
+        ion-col {
+            padding: 0;
+        }
+    }
+
+}
+.wrapper {
+    width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card__container {
+    width: 45vw;
+    padding: 0; 
+}
+
+// LOADER
+.loading {
+    --background: none;
+    --spinner-color: #fff;
+    
+    .loading-wrapper {
+        box-shadow: none;
+    }
+}
+
+//banner
+.banner {
+    height: 30vh;
+    color: var(--text-white);
+    background: url(./assets/imgs/home_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom-right-radius: 40%;
+    overflow: hidden;
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(var(--color-primary-rgb), 0.8);
+        z-index: 10;
+    }
+    h2 {
+        z-index: 15;
+        text-transform: capitalize;
+    }
+}
+
+
+//new products badge
+.new {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: "New";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-white);
+        position: absolute;
+        font-size: 0.6rem;
+        top: 5px;
+        left: 5px;
+        width: 30px;
+        height: 30px;
+        background: rgb(255, 19, 19);
+        border-radius: 50%;
+    }
+}
+
+//delivery_method_modal
+.delivery_method_modal {
+    --height: 50vh;
+
+    .modal-wrapper {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+
+//TEXT ALIGNMENT
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.bold {
+    font-weight: 600;
+}
+
+.hide {
+    display: none !important;
+}

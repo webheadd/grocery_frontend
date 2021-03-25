@@ -1,0 +1,19 @@
+<app-cart-fab [badge]="cartBadge"></app-cart-fab>
+<ion-content>
+  <div class="banner">
+    <h2>Shop by Category</h2>
+  </div>
+  <div class="wrapper">
+    <div class="container">
+      <ul>
+        <ng-container *ngFor="let category of categories">
+          <li (click)="openProductsPage(category)" class="category">
+            <ion-icon name="{{category.icon}}"></ion-icon>
+            <br />
+            {{ category.name }}
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</ion-content>

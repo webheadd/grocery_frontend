@@ -1,0 +1,36 @@
+<ion-icon
+  class="back-icon"
+  (click)="back()"
+  name="arrow-back"
+  #backIcon
+></ion-icon>
+<app-cart-fab *ngIf="cartBadge" [badge]="cartBadge"></app-cart-fab>
+
+<ion-content (ionScroll)="onWindowScroll($event)" [scrollEvents]="true">
+  <div class="container">
+    <div class="banner">
+      <h2>{{ pageTitle }}</h2>
+    </div>
+    <div class="sort_container">
+      <p>{{ products.length || '0' }} item(s) found</p>
+      <p class="sort">
+        {{ selectedSortOption || 'Sort'}}
+        <ion-icon name="options" (click)="presentActionSheet()"></ion-icon>
+      </p>
+    </div>
+    <div class="noProducts" *ngIf="showImageIfEmpty">
+      <ion-icon name="cart"></ion-icon>
+      There are no products available
+    </div>
+    <div class="products_container" *ngIf="!showImageIfEmpty">
+      <div class="card__container" *ngFor="let product of products">
+        <div class="__card">
+          <app-product
+            (addToCartHandler)="addToCart($event)"
+            [product]="product"
+          ></app-product>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

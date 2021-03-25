@@ -1,0 +1,29 @@
+<ion-item>
+  <ion-avatar slot="start">
+    <img src="{{ product.product.img }}" (error)="fallbackImage($event)" />
+  </ion-avatar>
+  <ion-label>
+    <p class="__total">
+      ₱{{ (product.product.price * product.qty).toLocaleString() }}
+    </p>
+    <p class="__name">{{ product.product.name }}</p>
+    <p>₱{{ product.product.price }} x {{ product.qty }}</p>
+    <p class="__stocks">{{ product.product.stocks }} left</p>
+    <form #formCon (ngSubmit)="save(product)">
+      <button [disabled]="product.updateQty === 0" class="save_btn">
+        Save
+      </button>
+      <div class="quantity_container">
+        <ion-icon name="remove" (click)="minusQuantity(product)"></ion-icon>
+        <input
+          disabled="true"
+          type="number"
+          name="quantity"
+          [(ngModel)]="product.qty"
+        />
+        <ion-icon name="add" (click)="addQuantity(product)"></ion-icon>
+      </div>
+    </form>
+  </ion-label>
+  <ion-icon class="arrow" name="chevron-back"></ion-icon>
+</ion-item>

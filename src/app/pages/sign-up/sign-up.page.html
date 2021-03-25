@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sign up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <form [formGroup]="signup">
+      <ion-slides
+        (ionSlideDidChange)="slideChanged()"
+        [options]="slideOpts"
+        #slider
+      >
+        <ion-slide>
+          <div class="holder" formGroupName="personalInfo">
+            <img
+              src="../../../assets/imgs/undraw_male_avatar.svg"
+              class="hero_icon"
+            />
+            <div class="form-item">
+              <label for="fname" class="label">First Name:</label>
+              <input formControlName="fname" type="text" name="fname" />
+            </div>
+            <div class="form-item">
+              <label for="lname" class="label">Last Name:</label>
+              <input formControlName="lname" type="text" name="lname" />
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="holder" formGroupName="mobileNumber">
+            <img
+              src="../../../assets/imgs/undraw_mobile_login.svg"
+              class="hero_icon"
+            />
+            <div class="form-item">
+              <label for="number" class="label">Mobile Number:</label>
+              <input formControlName="number" type="text" name="number" />
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="holder" formGroupName="password">
+            <img
+              src="../../../assets/imgs/undraw_authentication.svg"
+              class="hero_icon"
+            />
+            <div class="form-item">
+              <label for="password" class="label">Password:</label>
+              <input
+                formControlName="password"
+                type="password"
+                name="password"
+              />
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </form>
+    <div class="sliderController">
+      <button
+        class="slideControls prev"
+        (click)="prevSlide()"
+        *ngIf="activeIndex > 0"
+      >
+        <ion-icon name="chevron-back"></ion-icon>
+        Back
+      </button>
+      <button
+        class="slideControls next"
+        (click)="nextSlide()"
+        *ngIf="activeIndex < slideLength - 1"
+      >
+        Next
+        <ion-icon name="chevron-forward"></ion-icon>
+      </button>
+      <button
+        class="slideControls submit"
+        (click)="initSignup(signup.value)"
+        *ngIf="activeIndex === slideLength - 1"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</ion-content>

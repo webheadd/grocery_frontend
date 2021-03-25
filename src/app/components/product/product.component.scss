@@ -1,0 +1,63 @@
+.__card {
+    margin: 0 auto;
+    // width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    background: var(--bg-color-white);
+    box-shadow: 0 2px 4px var(--light-gray-shadow);;
+
+    img {
+        height: 100%;
+        max-width: 120px;
+        max-height: 100px;
+        margin: 0 auto 5px auto;
+        display: block;
+    }
+
+    .__content {
+        p {
+            margin: 0 0 10px 0;
+            font-size: 0.8rem;
+            text-align: center;
+
+            &:first-child {
+                font-weight: bold;
+                font-size: 1rem;
+                margin: 0;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                max-width: 125px;
+            }
+        }
+    }
+    .quantity_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.3em;
+        ion-icon {
+            font-size: 0.8rem;
+        }
+        input {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            font-size: 1rem;
+            border: none;
+            margin: 0 5px;
+        }
+    }
+    
+    .add_btn {
+        background: rgb(108, 99, 255);
+        padding: 10px 0;
+        width: 100%;
+        max-width: 120px;
+        color: var(--text-white);
+        border-radius: 5px;
+        font-size: 0.8rem;
+        margin: 0.5em auto 0 auto;
+        display: block;
+    }
+}

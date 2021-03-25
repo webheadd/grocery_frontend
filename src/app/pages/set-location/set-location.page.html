@@ -1,0 +1,17 @@
+<div class="searchBar">
+  <input type="text" placeholder="Search location" #searchPlaces />
+</div>
+<ion-content [fullscreen]="true">
+  <div class="map" #map></div>
+  <ion-icon class="pin" name="location"></ion-icon>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" (click)="getCurrentLocation()">
+      <ion-icon class="locate" name="locate"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer>
+  <button class="saveAddress" (click)="saveAddress()">Save Address</button>
+</ion-footer>

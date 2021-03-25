@@ -1,0 +1,38 @@
+<ion-content>
+  <p>Delivery Method</p>
+  <ion-icon class="closeModal" (click)="dismissModal()" name="close"></ion-icon>
+
+  <ion-list class="method_container" lines="full">
+    <ion-radio-group
+      (ionChange)="checkedRadio($event)"
+      mode="ios"
+      value="{{ deliveryMethod.value }}"
+      #radioGrp
+    >
+      <ion-item>
+        <img
+          src="https://image.flaticon.com/icons/png/512/45/45880.png"
+          class="ic_delivery_method"
+          item-start
+        />
+        <ion-label>Standard</ion-label>
+        <ion-radio slot="end" value="standard"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <img
+          src="https://image.flaticon.com/icons/svg/70/70007.svg"
+          class="ic_delivery_method"
+          item-start
+        />
+        <ion-label>Express</ion-label>
+        <ion-radio slot="end" value="express"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <div class="note">
+    <ion-icon name="alert-circle"></ion-icon>
+    Delivery fee is based on location.
+  </div>
+</ion-content>
